@@ -404,3 +404,21 @@ body {
   .mdl-button--primary.mdl-button--primary.mdl-button--raised, .mdl-button--primary.mdl-button--primary.mdl-button--fab {
     color: white;
     background-color: #3f51b5; }
+
+.customHr {
+  width: 100%;
+  font-size: 3px;
+  color: rgba(0, 0, 0, 0);
+  line-height: 2px;
+
+  background-color: grey;
+  margin-top: -0px;
+  margin-bottom: 0px;
+  z-index: 1000;
+}
+
+.copyright {
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(175, 172, 172);
+}
