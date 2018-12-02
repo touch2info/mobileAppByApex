@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Member
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-avatar item-start>
+      <img src="assets/icon/avatar.png">
+    </ion-avatar>
+    <ion-card-title>
+      <h2 color="primary">{{member.name}}</h2>
+    </ion-card-title>
+    <ion-card-subtitle>
+      {{member.role}}
+    </ion-card-subtitle>
+    <div>
+      <h3 ion-text color="primary">
+        <strong>Skills</strong>
+      </h3>
+      <h6 text-wrap>{{member.skills}}</h6>
+    </div>
+    <div>
+      <h3 ion-text color="primary">
+        <strong>About</strong>
+      </h3>
+      <h6 text-wrap>{{member.about}}</h6>
+    </div>
+    <div>
+      <h3 ion-text color="primary">
+        <strong>Manager:</strong> {{member.manager}}</h3>
+    </div>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button fill="solid" expand="full" shape="round">
+      <ion-icon name="call"></ion-icon>
+      {{member.phone}}
+    </ion-button>
+    <ion-button fill="solid" expand="full" shape="round">
+        <ion-icon name="mail"></ion-icon>
+        {{member.mail}}
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>
