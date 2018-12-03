@@ -7,7 +7,7 @@ export const getTeamMembers = (): Member[] => [
     phone: 9999999999,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
-    skills: 'Angular,ReactJS,HTML5,CSS3,SASS,ES7,TYPESCRIPT,OBJECTIVEC,JAVA,RDMS,SWIFT,AWS Services',
+    skills: ['Angular','ReactJS','HTML5','CSS3','SASS','ES7','TYPESCRIPT','OBJECTIVEC','JAVA','RDMS','SWIFT','AWS Services'],
     manager: 'Sumit',
     mail: 'ajjan@dtcc.com'
 },{
@@ -16,7 +16,7 @@ export const getTeamMembers = (): Member[] => [
     phone: 9999999989,
     role: 'Developer',
     about: 'I am a Backend Developer with a expertise in Java, Python and AWS',
-    skills: 'JAVA,RDMS,AWS Services',
+    skills: ['Angular','ReactJS','HTML5','CSS3','SASS','ES7','TYPESCRIPT','OBJECTIVEC','JAVA','RDMS','SWIFT','AWS Services'],
     manager: 'Sumit',
     mail: 'siva@dtcc.com'
 },{
@@ -25,7 +25,7 @@ export const getTeamMembers = (): Member[] => [
     phone: 9999999998,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
-    skills: 'Angular,ReactJS,HTML5,CSS3,SASS,ES7,TYPESCRIPT,OBJECTIVEC,JAVA,RDMS,SWIFT,AWS Services',
+    skills: ['Angular','ReactJS','HTML5','CSS3','SASS','ES7','TYPESCRIPT','OBJECTIVEC','JAVA','RDMS','SWIFT','AWS Services'],
     manager: 'PK',
     mail: 'ashish@dtcc.com'
 },{
@@ -34,7 +34,7 @@ export const getTeamMembers = (): Member[] => [
     phone: 9999999997,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
-    skills: 'Angular,ReactJS,HTML5,CSS3,SASS,ES7,TYPESCRIPT,OBJECTIVEC,JAVA,RDMS,SWIFT,AWS Services',
+    skills: ['Angular','ReactJS','HTML5','CSS3','SASS','ES7','TYPESCRIPT','OBJECTIVEC','JAVA','RDMS','SWIFT','AWS Services'],
     manager: 'Sandip',
     mail: 'aparna@dtcc.com'
 },
@@ -44,7 +44,7 @@ export const getTeamMembers = (): Member[] => [
     phone: 9999999993,
     role: 'Archietect',
     about: 'I am a techincal Archietect with a expertise in ORACLE,FRONT END,AWS and JAVA',
-    skills: 'Angular,ReactJS,HTML5,CSS3,SASS,ES7,TYPESCRIPT,OBJECTIVEC,JAVA,RDMS,AWS Services',
+    skills: ['Angular','ReactJS','HTML5','CSS3','SASS','ES7','TYPESCRIPT','OBJECTIVEC','JAVA','RDMS','SWIFT','AWS Services'],
     manager: 'PK',
     mail: 'sumit@dtcc.com'
 },{
@@ -53,7 +53,7 @@ export const getTeamMembers = (): Member[] => [
     phone: 9999999992,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
-    skills: 'Angular,ReactJS,HTML5,CSS3,SASS,ES7,TYPESCRIPT,OBJECTIVEC,JAVA,RDMS,SWIFT,AWS Services',
+    skills: ['Angular','ReactJS','HTML5','CSS3','SASS','ES7','TYPESCRIPT','OBJECTIVEC','JAVA','RDMS','SWIFT','AWS Services'],
     manager: 'Sandip',
     mail: 'wade@dtcc.com'
 },{
@@ -62,7 +62,7 @@ export const getTeamMembers = (): Member[] => [
     phone: 9999999991,
     role: 'Archietect',
     about: 'I am a techincal Archietect with a expertise in ORACLE,FRONT END,AWS and JAVA',
-    skills: 'Angular,ReactJS,HTML5,CSS3,SASS,ES7,TYPESCRIPT,OBJECTIVEC,JAVA,RDMS,AWS Services',
+    skills: ['Angular','ReactJS','HTML5','CSS3','SASS','ES7','TYPESCRIPT','OBJECTIVEC','JAVA','RDMS','SWIFT','AWS Services'],
     manager: 'PK',
     mail: 'sandip@dtcc.com'
 }

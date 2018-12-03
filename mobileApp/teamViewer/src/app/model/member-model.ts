@@ -4,7 +4,7 @@ export interface Member {
     phone: number,
     role: string,
     about: string,
-    skills: string,
+    skills: Array<string>,
     manager: string,
     mail: string
 }
