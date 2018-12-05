@@ -1,0 +1,35 @@
+<ion-card>
+    <ion-item>
+        <ion-avatar item-start>
+            <ion-icon name="person"></ion-icon>
+        </ion-avatar>
+        <h2 ion-text color="primary">{{member.name}}</h2>
+        <h1 ion-text color="secondary">{{member.role}}</h1>
+    </ion-item>
+    <ion-card-content>
+        <p>Skills:</p>
+        <div>
+            <ion-badge color="primary" *ngFor="let skill of skills">{{skill}}</ion-badge>
+        </div>
+        <p>Manager: {{member.manager}}</p>
+        <p>About:</p>
+        <p>{{member.about}}</p>
+    </ion-card-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button icon-start clear small>
+                    <ion-icon name="call"></ion-icon>
+                    <div>{{member.phone}}</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button icon-start clear small>
+                    <ion-icon name="mail"></ion-icon>
+                    <div>{{member.mail}}</div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-card>
