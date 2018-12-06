@@ -11,6 +11,7 @@ import { find } from 'lodash';
 })
 export class MemberDetailsComponent implements OnInit {
   public member: Member;
+  public skills: Array<String>;
   constructor(
       private route: ActivatedRoute
   ) {
@@ -26,6 +27,7 @@ export class MemberDetailsComponent implements OnInit {
       this.member = find(members, function (element) {
           return (element.id === parseInt(memberId));
       });
+      this.skills = this.member.skills;
       console.log(this.member);
   }
   // add back when alpha.4 is out

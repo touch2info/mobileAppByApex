@@ -23,7 +23,9 @@
       <h3 ion-text color="primary">
         <strong>Skills</strong>
       </h3>
-      <h6 text-wrap>{{member.skills}}</h6>
+      <div class="skill-set" *ngFor="let skill of skills">
+      <ion-badge color="primary">{{skill}}</ion-badge>
+      </div>
     </div>
     <div>
       <h3 ion-text color="primary">

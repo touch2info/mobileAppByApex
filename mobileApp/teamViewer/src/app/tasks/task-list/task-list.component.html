@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Tasks
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="createdTasks">
+  <h1>Created Tasks</h1>
+  <ion-list>
+    <ion-item *ngFor="let item of createdTasks" [routerLink]="[item.id]">
+      {{item.title}} -
+      <div class="priority">
+        <div [ngClass]="getPriorityClass(item)">
+          <strong>{{item.priority}}</strong>
+        </div>
+      </div>
+      <div [ngClass]="getStatusClass(item)" class="item-note" slot="end">
+        <strong>{{item.status}}</strong>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="workingTasks">
+  <h1>Applied Tasks</h1>
+  <ion-list>
+    <ion-item *ngFor="let item of workingTasks" [routerLink]="[item.id]">
+      {{item.title}} -
+      <div class="priority">
+        <div [ngClass]="getPriorityClass(item)">
+          <strong>{{item.priority}}</strong>
+        </div>
+      </div>
+      <div [ngClass]="getStatusClass(item)" class="item-note" slot="end">
+        <strong>{{item.status}}</strong>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="teamsTasks">
+  <h1>Other Tasks</h1>
+  <ion-searchbar placeholder="Filter Tasks"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of teamsTasks" [routerLink]="[item.id]">
+      {{item.title}} -
+      <div class="priority">
+        <div [ngClass]="getPriorityClass(item)">
+          <strong>{{item.priority}}</strong>
+        </div>
+      </div>
+      <div [ngClass]="getStatusClass(item)" class="item-note" slot="end">
+        <strong>{{item.status}}</strong>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
