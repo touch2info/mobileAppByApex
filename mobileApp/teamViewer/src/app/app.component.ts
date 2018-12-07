@@ -21,6 +21,11 @@ export class AppComponent {
       title: 'Team List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Create Msg/Task',
+      url: '/create',
+      icon: 'list'
     }
   ];
 
