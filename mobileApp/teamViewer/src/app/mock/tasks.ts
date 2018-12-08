@@ -11,7 +11,7 @@ export const teamtasks = [
         "interestedMembers": [],
         "priority": "low",
         "description": "Develop a reusable process to move MQ messages from onprem to Cloud",
-        "id": 4,
+        "id": "4",
         "targetDate": "01-JAN-2019",
         "tags": [
             "aws",
@@ -33,22 +33,18 @@ export const teamtasks = [
         "points": 10,
         "status": "in progress",
         "interestedMembers": [
-            [
                 {
                     "name": "Ajjan M",
                     "id": "100000"
-                }
-            ],
-            [
+                },
                 {
                     "name": "Ashish D",
                     "id": "100002"
                 }
-            ]
         ],
         "priority": "low",
         "description": "Develop calendar component using Angular for our XYZ project",
-        "id": 1,
+        "id": "1",
         "targetDate": "31-DEC-2018",
         "tags": [
             "ui",
@@ -73,7 +69,7 @@ export const teamtasks = [
         "interestedMembers": [],
         "priority": "high",
         "description": "Investigate and resolve XYZ job failure in prod",
-        "id": 5,
+        "id": "5",
         "targetDate": "13-DEC-2018",
         "tags": [
             "prodissue",

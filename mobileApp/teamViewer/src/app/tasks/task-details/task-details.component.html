@@ -65,12 +65,22 @@
       </ion-range>
       <ion-row>
         <ion-col>
-          <strong>Description</strong>
+          <strong>Description:</strong>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           {{taskDetail.description}}
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="shouldShowAssignee()">
+        <ion-col>
+          <ion-label>Assign To</ion-label>
+          <ion-select [value]="selectedUser" ok-text="Okay" cancel-text="Dismiss">
+            <ion-select-option *ngFor="let user of taskDetail.interestedMembers" [value]="user.id">
+              {{user.name}}
+            </ion-select-option>
+          </ion-select>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -85,7 +95,7 @@
       Approve
     </ion-button>
     <ion-button *ngIf="!shouldDisableRange()" fill="solid" expand="full" shape="round">
-        Update
-      </ion-button>
+      Update
+    </ion-button>
   </ion-toolbar>
 </ion-footer>

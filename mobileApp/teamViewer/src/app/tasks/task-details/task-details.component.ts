@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from 'src/app/model/tasks-model';
+import { Task, User } from 'src/app/model/tasks-model';
 import { ActivatedRoute } from '@angular/router';
 import { teamtasks } from 'src/app/mock/tasks';
 import { find, isEmpty } from 'lodash';
@@ -13,6 +13,7 @@ export class TaskDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
   taskDetail: Task = null;
+  selectedUser: string = null;
 
   ngOnInit() {
     const routeParams = this.route.snapshot.params
@@ -22,7 +23,7 @@ export class TaskDetailsComponent implements OnInit {
   loadTaskDetail(taskId) {
     const tasks: Array<Task> = teamtasks;
     this.taskDetail = find(tasks, function (element) {
-      return (element.id === parseInt(taskId));
+      return (element.id === taskId);
     });
     console.log(this.taskDetail);
   }
@@ -52,6 +53,10 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   shouldDisableRange() {
-    return this.taskDetail.assignedTo.id !== "100000" && this.taskDetail.status.toLowerCase() != 'in progress'
+    return this.taskDetail.assignedTo && this.taskDetail.assignedTo.id !== "100000" && this.taskDetail.status.toLowerCase() != 'in progress'
+  }
+
+  shouldShowAssignee() {
+    return this.taskDetail.status.toLowerCase() == 'open' && this.taskDetail.creator.id === '100000' && !isEmpty(this.taskDetail.interestedMembers);
   }
 }

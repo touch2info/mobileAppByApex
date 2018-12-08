@@ -1,10 +1,10 @@
 export interface Task {
     "completionPct": string,
     "creator": User,
-    "assignedTo": User,
+    "assignedTo"?: any,
     "points": number,
     "status": string,
-    "interestedMembers": Array<User>,
+    "interestedMembers"?: any,
     "priority": string,
     "description": string,
     "id": string,
@@ -15,5 +15,5 @@ export interface Task {
 
 export interface User {
     name: string,
-    id: number
+    id: string
 }
