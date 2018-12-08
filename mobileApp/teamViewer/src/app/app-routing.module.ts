@@ -16,7 +16,8 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'createMsg_Tsk', loadChildren: './create-msg-tsk/create-msg-tsk.module#CreateMsgTskPageModule' },
-  { path: 'create', loadChildren: './create/create.module#CreatePageModule' }
+  { path: 'create', loadChildren: './create/create.module#CreatePageModule' },
+  { path: 'temp', loadChildren: './temp/temp.module#TempPageModule' }
 
 
 ];
