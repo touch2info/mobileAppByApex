@@ -1,0 +1,20 @@
+
+*****************   firebase script for notification
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC6EE0FvIMHzOITKUCZvsZa3oMExr-Fkot",
+    authDomain: "mobileappbyapex.firebaseapp.com",
+    databaseURL: "https://mobileappbyapex.firebaseio.com",
+    projectId: "mobileappbyapex",
+    storageBucket: "mobileappbyapex.appspot.com",
+    messagingSenderId: "927320049825"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+***************** Server Key *******
+AAAA1-iVCKE:APA91bHhnF9K24uTtXzd9AaV5X0qd6sSIn8LPlN773MLeLkVObdSSloYeimsANwtp-dG5S_7eWYWl_j4-L36eDwDEfdmMwvCflRp32kbflQmvSNWtUi41VJf9kXvxf5fqHEWAxSKkTrG
+
