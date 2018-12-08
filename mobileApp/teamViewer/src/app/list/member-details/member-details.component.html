@@ -14,26 +14,28 @@
       <img src="assets/icon/avatar.png">
     </ion-avatar>
     <ion-card-title>
-      <h2 color="primary">{{member.name}}</h2>
+      <h2 color="primary">{{member?.name}}</h2>
     </ion-card-title>
     <ion-card-subtitle>
-      {{member.role}}
+      {{member?.role}}
     </ion-card-subtitle>
     <div>
       <h3 ion-text color="primary">
         <strong>Skills</strong>
       </h3>
-      <h6 text-wrap>{{member.skills}}</h6>
+      <div class="skill-set" *ngFor="let skill of skills">
+      <ion-badge color="primary">{{skill}}</ion-badge>
+      </div>
     </div>
     <div>
       <h3 ion-text color="primary">
         <strong>About</strong>
       </h3>
-      <h6 text-wrap>{{member.about}}</h6>
+      <h6 text-wrap>{{member?.about}}</h6>
     </div>
     <div>
       <h3 ion-text color="primary">
-        <strong>Manager:</strong> {{member.manager}}</h3>
+        <strong>Manager:</strong> {{member?.manager}}</h3>
     </div>
   </ion-card>
 </ion-content>
@@ -41,11 +43,11 @@
   <ion-toolbar>
     <ion-button fill="solid" expand="full" shape="round">
       <ion-icon name="call"></ion-icon>
-      {{member.phone}}
+      {{member?.phone}}
     </ion-button>
     <ion-button fill="solid" expand="full" shape="round">
         <ion-icon name="mail"></ion-icon>
-        {{member.mail}}
+        {{member?.mail}}
       </ion-button>
   </ion-toolbar>
 </ion-footer>

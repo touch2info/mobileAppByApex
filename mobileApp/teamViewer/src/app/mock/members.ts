@@ -3,7 +3,7 @@ import { Member } from '../model/member-model'
 export const getTeamMembers = (): Member[] => [
 {
     name: 'Ajjan Muthaiah',
-    id: 100000,
+    id: "100000",
     phone: 9999999999,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
@@ -12,7 +12,7 @@ export const getTeamMembers = (): Member[] => [
     mail: 'ajjan@dtcc.com'
 },{
     name: 'Siva KS',
-    id: 100004,
+    id: "100004",
     phone: 9999999989,
     role: 'Developer',
     about: 'I am a Backend Developer with a expertise in Java, Python and AWS',
@@ -21,7 +21,7 @@ export const getTeamMembers = (): Member[] => [
     mail: 'siva@dtcc.com'
 },{
     name: 'Ashish Daga',
-    id: 100001,
+    id: "100001",
     phone: 9999999998,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
@@ -30,7 +30,7 @@ export const getTeamMembers = (): Member[] => [
     mail: 'ashish@dtcc.com'
 },{
     name: 'Aparna',
-    id: 100002,
+    id: "100002",
     phone: 9999999997,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
@@ -40,7 +40,7 @@ export const getTeamMembers = (): Member[] => [
 },
 {
     name: 'Sumit',
-    id: 100003,
+    id: "100003",
     phone: 9999999993,
     role: 'Archietect',
     about: 'I am a techincal Archietect with a expertise in ORACLE,FRONT END,AWS and JAVA',
@@ -49,7 +49,7 @@ export const getTeamMembers = (): Member[] => [
     mail: 'sumit@dtcc.com'
 },{
     name: 'Wade',
-    id: 100002,
+    id: "100002",
     phone: 9999999992,
     role: 'Developer',
     about: 'I am a UI Developer with a expertise in Angular JS, Java script, React JS, Native IOS Development',
@@ -58,7 +58,7 @@ export const getTeamMembers = (): Member[] => [
     mail: 'wade@dtcc.com'
 },{
     name: 'Sandip',
-    id: 100001,
+    id: "100001",
     phone: 9999999991,
     role: 'Archietect',
     about: 'I am a techincal Archietect with a expertise in ORACLE,FRONT END,AWS and JAVA',
