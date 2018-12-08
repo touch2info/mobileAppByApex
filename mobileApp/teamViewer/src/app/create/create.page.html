@@ -19,14 +19,22 @@
   <div *ngIf="msgBlock" >    
       
       <ion-item >
-          <ion-label fixed >Enter Message</ion-label>          
+          <ion-icon name="clipboard" color="primary"></ion-icon>
+          <ion-title>Enter Message</ion-title>          
         </ion-item>
       <ion-item>
-        <ion-input placeholder="Enter Msg Title" max="10"></ion-input>
+        <ion-input placeholder="Enter Msg Title" maxLength="25"></ion-input>
       </ion-item>
       <ion-item>          
           <ion-textarea rows="5"  placeholder="Enter your message here..."></ion-textarea>
         </ion-item>
+        <ion-item>
+            <ion-label>Priority: </ion-label>
+            <ion-range min="1" max="3" step="1" snaps="true" pin="true" [(ngModel)]="singleValue4">
+                <ion-icon small name="ios-thermometer" slot="start"></ion-icon>
+                <ion-icon name="ios-thermometer" slot="end"></ion-icon>
+            </ion-range>
+          </ion-item>
         <ion-item>
             <ion-label>Send Notification</ion-label>
             <ion-toggle [(ngModel)]="sendNotification"></ion-toggle>
@@ -48,4 +56,35 @@
         </div>        
   </div >
 
+  <div *ngIf="taskBlock" > 
+      <ion-item >
+            <ion-icon name="checkbox-outline" color="primary"></ion-icon>            
+          <ion-title>Create Task</ion-title>          
+        </ion-item>
+      <ion-item>
+        <ion-input placeholder="Enter Task Info " maxLength="25"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Priority: </ion-label>
+          <ion-range min="1" max="3" step="1" snaps="true" pin="true" [(ngModel)]="singleValue4">
+              <ion-icon small name="ios-thermometer" slot="start"></ion-icon>
+              <ion-icon name="ios-thermometer" slot="end"></ion-icon>
+          </ion-range>
+        </ion-item>
+      <ion-item>
+          <ion-label>Send Notification</ion-label>
+          <ion-toggle [(ngModel)]="sendNotification"></ion-toggle>
+      </ion-item>
+      <ion-list>          
+          <ion-item>
+              <ion-label>Due Date </ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+          </ion-item>
+      </ion-list>
+        <br>
+        <div>
+            <ion-button href="/home" size="small" shape="round" position="right" color="light" outline>Cancel</ion-button>
+            <ion-button href="/login"  shape="round" position="right">Submit</ion-button>
+        </div>        
+  </div >
 </ion-content>
