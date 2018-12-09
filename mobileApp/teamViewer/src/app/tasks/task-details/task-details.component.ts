@@ -76,7 +76,6 @@ export class TaskDetailsComponent implements OnInit {
       const payload = {
         "id": this.taskDetail.id,
         "taskStatus": "in progress",
-        "completionPct": 0,
         "assignedTo": {
           "id": this.selectedUser,
           "name": selectedUserName
@@ -89,14 +88,13 @@ export class TaskDetailsComponent implements OnInit {
       interestedMembers.push({ id: 100000, name: 'Ajjan M' });
       const payload = {
         "id": this.taskDetail.id,
-        "taskStatus": "open",
-        "completionPct": 0,
         "interestedMembers": interestedMembers
       }
       console.log(payload);
     }
     if (action == 'update') {
       const payload = {
+        "id": this.taskDetail.id,
         "completionPct": this.completionPct
       }
       console.log(payload);
