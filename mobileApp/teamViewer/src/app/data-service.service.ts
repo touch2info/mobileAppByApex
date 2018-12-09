@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DataServiceService {
 
   public teamMembers: Array<any> = null;
+  public tasks: Array<any> = null;
   constructor() {;
   }
 

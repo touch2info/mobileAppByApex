@@ -3,11 +3,11 @@ export interface Task {
     "creator": User,
     "assignedTo"?: any,
     "points": number,
-    "status": string,
+    "taskStatus": string,
     "interestedMembers"?: any,
     "priority": string,
     "description": string,
-    "id": string,
+    "id": number,
     "targetDate": string,
     "tags": Array<string>,
     "title": string
@@ -15,5 +15,5 @@ export interface Task {
 
 export interface User {
     name: string,
-    id: string
+    id: number
 }

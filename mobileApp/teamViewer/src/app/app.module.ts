@@ -10,9 +10,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DataServiceService } from 'src/app/data-service.service';
-import { HttpErrorHandler } from 'src/app/http-error-handler.service';
-import { MessageService } from 'src/app/message-service.service';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,8 +23,6 @@ import { MessageService } from 'src/app/message-service.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    HttpErrorHandler,
-    MessageService,
     DataServiceService
   ],
   bootstrap: [AppComponent]

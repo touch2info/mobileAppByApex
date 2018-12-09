@@ -14,13 +14,13 @@
     <ion-item-divider light>{{totalTasks.title}}</ion-item-divider>
     <ion-item *ngFor="let item of totalTasks.list" [routerLink]="[item.id]">
       {{item.title}}
-      <div [ngClass]="getStatusClass(item)" class="item-note" slot="end">
+      <div [ngClass]="getTaskStatusClass(item)" class="item-note" slot="end">
         <div class="priority">
           <div [ngClass]="getPriorityClass(item)">
             <strong>{{item.priority}}</strong>
           </div>
         </div>
-        <strong>{{item.status}}</strong>
+        <strong>{{item.taskStatus}}</strong>
       </div>
     </ion-item>
   </ion-item-group>

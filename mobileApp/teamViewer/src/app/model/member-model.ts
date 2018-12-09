@@ -1,6 +1,6 @@
 export interface Member {
     name: string,
-    id: string,
+    id: number,
     phone: number,
     role: string,
     about: string,

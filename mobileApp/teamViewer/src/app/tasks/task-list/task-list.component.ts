@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular'
 import { Task } from 'src/app/model/tasks-model';
 import { filter, isEmpty } from 'lodash';
+import { DataServiceService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-task-list',
@@ -15,7 +16,7 @@ export class TaskListComponent implements OnInit {
   workingTasks: Array<Task> = null;
   teamsTasks: Array<Task> = null;
   tasks: Array<any> = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public dataService: DataServiceService) { }
 
   ngOnInit() {
     this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teamtasks')
@@ -26,14 +27,15 @@ export class TaskListComponent implements OnInit {
   }
 
   handleTasks(teamtasks) {
+    this.dataService.tasks = teamtasks;
     this.createdTasks = filter(teamtasks, function (data) {
-      return data.creator.id === "100000";
+      return data.creator.id === 100000;
     })
     this.workingTasks = filter(teamtasks, function (data) {
-      return data.assignedTo && data.assignedTo.id === "100000";
+      return data.assignedTo && data.assignedTo.id === 100000;
     })
     this.teamsTasks = filter(teamtasks, function (data) {
-      return (data.creator.id !== "100000") && (data.assignedTo && data.assignedTo.id !== "100000");
+      return (data.creator.id !== 100000) && (data.assignedTo && data.assignedTo.id !== 100000);
     })
     this.groupContacts()
     console.log(this.createdTasks, this.workingTasks, this.teamsTasks);
@@ -63,11 +65,11 @@ export class TaskListComponent implements OnInit {
     }
   }
 
-  getStatusClass(data) {
-    if (data.status.toLowerCase() == 'open') {
+  getTaskStatusClass(data) {
+    if (data.taskStatus.toLowerCase() == 'open') {
       return 'pending'
     }
-    if (data.status.toLowerCase() == 'in progress') {
+    if (data.taskStatus.toLowerCase() == 'in progress') {
       return 'progress'
     }
     else {
