@@ -41,11 +41,11 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-button fill="solid" expand="full" shape="round">
+    <ion-button fill="solid" expand="full" shape="round" (click)="callMember()"> 
       <ion-icon name="call"></ion-icon>
       {{member?.phone}}
     </ion-button>
-    <ion-button fill="solid" expand="full" shape="round">
+    <ion-button fill="solid" expand="full" shape="round" (click)="emailMember()">
         <ion-icon name="mail"></ion-icon>
         {{member?.mail}}
       </ion-button>

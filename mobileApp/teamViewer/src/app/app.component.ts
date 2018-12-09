@@ -22,11 +22,11 @@ export class AppComponent {
       url: '/list',
       icon: 'list'
     },
-      {
-        title: 'Tasks',
-        url: '/tasks',
-        icon: 'list'
-      }
+    {
+      title: 'Tasks',
+      url: '/tasks',
+      icon: 'list'
+    },
     {
       title: 'Create Msg/Task',
       url: '/create',
@@ -46,7 +46,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      
+
     });
   }
 }
