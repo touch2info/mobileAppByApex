@@ -47,11 +47,11 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   shouldShowApprove() {
-    return this.taskDetail && this.taskDetail.taskStatus.toLowerCase() == 'open' && (this.taskDetail.creator.id === '100000') && !isEmpty(this.taskDetail.interestedMembers);
+    return this.taskDetail && this.taskDetail.taskStatus.toLowerCase() == 'open' && (this.taskDetail.creator.id === 100000) && !isEmpty(this.taskDetail.interestedMembers);
   }
 
   shouldShowApply() {
-    return this.taskDetail && this.taskDetail.taskStatus.toLowerCase() == 'open' && (this.taskDetail.creator.id !== '100000');
+    return this.taskDetail && this.taskDetail.taskStatus.toLowerCase() == 'open' && (this.taskDetail.creator.id !== 100000);
   }
 
   shouldDisableRange() {
@@ -59,11 +59,11 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   shouldShowAssignee() {
-    return this.taskDetail && this.taskDetail.taskStatus.toLowerCase() == 'open' && this.taskDetail.creator.id === '100000' && !isEmpty(this.taskDetail.interestedMembers);
+    return this.taskDetail && this.taskDetail.taskStatus.toLowerCase() == 'open' && this.taskDetail.creator.id === 100000 && !isEmpty(this.taskDetail.interestedMembers);
   }
 
   shouldShowClose() {
-    return this.taskDetail && this.taskDetail.creator.id === '100000' && (this.taskDetail.completionPct == "100")
+    return this.taskDetail && this.taskDetail.creator.id === 100000 && (this.taskDetail.completionPct == "100")
   }
 
   sliderOnChange(event){
