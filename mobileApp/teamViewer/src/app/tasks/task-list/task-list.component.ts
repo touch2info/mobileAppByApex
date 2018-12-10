@@ -44,14 +44,14 @@ export class TaskListComponent implements OnInit {
   groupContacts() {
     if(!isEmpty(this.createdTasks)) {
       const createdTask = {
-        title: 'Created Tasks',
+        title: 'My Created Tasks',
         list: this.createdTasks
       }
       this.tasks.push(createdTask);
     }
     if(!isEmpty(this.workingTasks)) {
       const workingTasks = {
-        title: 'Assigned Tasks',
+        title: 'My Current Tasks',
         list: this.workingTasks
       }
       this.tasks.push(workingTasks);
