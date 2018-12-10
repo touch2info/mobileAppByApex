@@ -7,8 +7,6 @@
 .closed {
     color: green;
 }
-.priority {
-    padding-left: 10px;
     .high-priority {
         color: red;
     }
@@ -17,6 +15,8 @@
     }
     .low-priority {
         color: green;
-    }  
+    } 
+.completion-pct {
+    color: blue;
 }
 
