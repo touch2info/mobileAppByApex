@@ -1,0 +1,7 @@
+{
+  "name": "teamViewer",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

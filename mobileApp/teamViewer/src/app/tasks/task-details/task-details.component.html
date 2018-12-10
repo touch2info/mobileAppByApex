@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Task Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-title>
+      <h2 color="primary">{{taskDetail?.title}}</h2>
+    </ion-card-title>
+    <ion-card-subtitle>
+      <div [ngClass]="getTaskStatusClass()">{{taskDetail?.taskStatus}}</div>
+    </ion-card-subtitle>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <strong>Priority:</strong>
+        </ion-col>
+        <ion-col>
+          {{taskDetail?.priority}}
+        </ion-col>
+        <ion-col>
+          <strong>Creator:</strong>
+        </ion-col>
+        <ion-col>
+          {{taskDetail?.creator.name}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>Target Date:</strong>
+        </ion-col>
+        <ion-col>
+          {{taskDetail?.targetDate}}
+        </ion-col>
+        <ion-col>
+          <strong>Points:</strong>
+        </ion-col>
+        <ion-col>
+          {{taskDetail?.points}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col *ngIf="taskDetail?.assignedTo?.name">
+          <strong>Assignee:</strong>
+        </ion-col>
+        <ion-col *ngIf="taskDetail?.assignedTo?.name">
+          {{taskDetail?.assignedTo?.name}}
+        </ion-col>
+        <ion-col *ngIf="shouldDisplayNomination()">
+          <strong>Nominations:</strong>
+        </ion-col>
+        <ion-col *ngIf="shouldDisplayNomination()">
+          {{taskDetail?.interestedMembers}}
+        </ion-col>
+      </ion-row>
+      <ion-range pin [value]="taskDetail?.completionPct" (ionChange)="sliderOnChange($event)" min="0" max="100" color="primary" [disabled]="shouldDisableRange()">
+        <ion-icon size="small" slot="start" name="star-outline"></ion-icon>
+        <ion-icon slot="end" name="star"></ion-icon>
+      </ion-range>
+      <ion-row>
+        <ion-col>
+          <strong>Description:</strong>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          {{taskDetail?.description}}
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="shouldShowAssignee()">
+        <ion-col>
+          <ion-label>Assign To</ion-label>
+          <ion-select [value]="selectedUser" ok-text="Okay" cancel-text="Dismiss">
+            <ion-select-option *ngFor="let user of taskDetail.interestedMembers" [value]="user.id">
+              {{user.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button *ngIf="shouldShowApply()" (click)="updateTask('apply')" fill="solid" expand="full" shape="round">
+      Apply
+    </ion-button>
+    <ion-button *ngIf="shouldShowApprove()" (click)="updateTask('approve')" fill="solid" expand="full" shape="round">
+      Approve
+    </ion-button>
+    <ion-button *ngIf="!shouldDisableRange()" (click)="updateTask('update')" fill="solid" expand="full" shape="round">
+      Update
+    </ion-button>
+    <ion-button *ngIf="shouldShowClose()" (click)="updateTask('close')" fill="solid" expand="full" shape="round">
+      Update
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

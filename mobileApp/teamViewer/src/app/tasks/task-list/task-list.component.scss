@@ -1,0 +1,22 @@
+.pending {
+    color: blue
+}
+.progress {
+    color: yellow;
+}
+.closed {
+    color: green;
+}
+.priority {
+    padding-left: 10px;
+    .high-priority {
+        color: red;
+    }
+    .med-priority {
+        color: yellow;
+    }
+    .low-priority {
+        color: green;
+    }  
+}
+
