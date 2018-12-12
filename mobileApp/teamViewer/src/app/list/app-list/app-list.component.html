@@ -4,16 +4,18 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Application List
+        Application Contacts 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item detail *ngFor="let item of appName" [routerLink]="[item.id]">
-      {{item?.name}}
+      <h2 color="primary">
+    <ion-item style="font-weight:bold" detail *ngFor="let item of appName" [routerLink]="[item.id]">
+     {{item?.name}}
     </ion-item>
+    </h2>
   </ion-list>
   <!--
     <div *ngIf="selectedItem" padding>
