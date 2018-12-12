@@ -1,6 +1,6 @@
 {
-  "name": "teamViewer",
-  "version": "0.0.1",
+  "name": "DLinx",
+  "version": "0.0.2",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "scripts": {
@@ -30,7 +30,9 @@
     "call-number": "1.0.1",
     "cordova-plugin-email-composer": "0.8.15",
     "core-js": "^2.5.4",
+    "moment": "^2.22.2",
     "rxjs": "~6.3.3",
+    "save": "^2.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

@@ -9,18 +9,14 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
+  <ion-searchbar [(ngModel)]="filterText" (ionChange)="filterTextChange()" animated placeholder="Filter Tasks"></ion-searchbar>
   <ion-item-group *ngFor="let totalTasks of tasks">
-    <ion-item-divider light>{{totalTasks.title}}</ion-item-divider>
-    <ion-item *ngFor="let item of totalTasks.list" [routerLink]="[item.id]">
+    <ion-item-divider color="primary">{{totalTasks.title}}</ion-item-divider>
+    <ion-item detail *ngFor="let item of totalTasks.list" [routerLink]="[item.id]">
       {{item.title}}
-      <div [ngClass]="getTaskStatusClass(item)" class="item-note" slot="end">
-        <div class="priority">
-          <div [ngClass]="getPriorityClass(item)">
-            <strong>{{item.priority}}</strong>
-          </div>
-        </div>
-        <strong>{{item.taskStatus}}</strong>
+      <div class="item-note" slot="end">
+        <ion-icon [ngClass]="getPriorityClass(item)" [name]="getPriority(item)"></ion-icon>
+        <div class="completion-pct">{{item.completionPct}} %</div>
       </div>
     </ion-item>
   </ion-item-group>
