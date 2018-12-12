@@ -17,7 +17,7 @@ export class ListPage implements OnInit {
     this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
       .subscribe(data => {
         const items = [];
-        data = data.body.teamMembers;
+        data = data['body'].teamMembers;
         this.dataService.teamMembers = data;
         data.forEach(element => {
           items.push({

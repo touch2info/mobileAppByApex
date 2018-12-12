@@ -59,7 +59,7 @@ export class TaskListComponent implements OnInit {
     }
     if (!isEmpty(this.teamsTasks)) {
       const teamsTasks = {
-        title: 'My Teams Tasks',
+        title: 'My Team Tasks',
         list: this.teamsTasks
       }
       this.tasks.push(teamsTasks);
@@ -89,9 +89,9 @@ export class TaskListComponent implements OnInit {
 
   filterTextChange() {
     this.teamsTasks = [];
-    this.tasks = {};
+    this.tasks = [];
     this.http.get(`https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teamtasks?id=${this.dataService.user.id}&tag=${this.filterText}`).subscribe(data => {
-      data = data.body.teamtasks;
+      data = data['body'].teamtasks;
       this.handleTasks(data);
     })
   }

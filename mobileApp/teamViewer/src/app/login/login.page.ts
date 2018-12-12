@@ -28,12 +28,12 @@ export class LoginPage implements OnInit {
     }
     this.http.post('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/', payload)
       .subscribe(data => {
-        if (data.status == 'success') {
-          this.dataService.user = data.user;
+        if (data['status'] == 'success') {
+          this.dataService.user = data['user'];
           this.router.navigate(['home']);
         }
         else {
-          this.errorMsg = data.msg;
+          this.errorMsg = data['msg'];
         }
       })
   }
