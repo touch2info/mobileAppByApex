@@ -8,8 +8,8 @@ let documentClient = new AWS.DynamoDB.DocumentClient({
 
 exports.handler = (event, context, callback) => {
 
-    let method = event.method;
-    if (method == "POST") {
+    let type = event.body.type;
+    if (type == "CREATE") {
 
         let body = event.body;
         let id = body.id;
@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
         let points = body.points;
         let completionPct = body.completionPct;
         let description = body.description;
-        let status = "open";
+        let taskStatus = "open";
         let targetDate = body.targetDate;
         let title = body.title;
         let assignedTo = body.assignedTo;
@@ -34,7 +34,7 @@ exports.handler = (event, context, callback) => {
                 "points": points,
                 "completionPct": completionPct,
                 "description": description,
-                "status": status,
+                "taskStatus": taskStatus,
                 "targetDate": targetDate,
                 "creator": { "id": creatorid, "name": creatorname },
                  "assignedTo" : assignedTo,
@@ -55,7 +55,7 @@ exports.handler = (event, context, callback) => {
             }
         })
     }
-    else if (method == "PUT") {
+    else if (type == "UPDATE") {
 
         let body = event.body;
         let id = body.id;
