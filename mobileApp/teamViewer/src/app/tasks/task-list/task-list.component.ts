@@ -20,8 +20,8 @@ export class TaskListComponent implements OnInit {
   constructor(private http: HttpClient, public dataService: DataServiceService) { }
 
   ngOnInit() {
-    this.http.get(`https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teamtasks?id=${this.dataService.user.id}&tag=${this.filterText}`).subscribe(data => {
-      data = data.body.teamtasks;
+    this.http.get(`https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teamtasks?id=${this.dataService.user.id}&tag=${this.filterText}`).subscribe((data: Response) => {
+      data = data.body['teamtasks'];
       this.handleTasks(data);
     })
   }
