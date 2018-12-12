@@ -89,7 +89,7 @@ export class TaskDetailsComponent implements OnInit {
       }
     }
     if (action == 'apply') {
-      const interestedMembers: Array<Member> = this.taskDetail.interestedMembers || [];
+      const interestedMembers: Array<User> = this.taskDetail.interestedMembers || [];
       interestedMembers.push({ id: this.dataService.user.id, name: this.dataService.user.name });
       payload['id'] = this.taskDetail.id;
       payload['taskStatus'] = 'open';

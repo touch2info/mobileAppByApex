@@ -6,6 +6,7 @@ import { getTeamMembers } from 'src/app/mock/members';
 import { find } from 'lodash';
 import { DataServiceService } from 'src/app/data-service.service';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-member-details',
@@ -13,27 +14,29 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
     styleUrls: ['./member-details.component.scss']
 })
 export class MemberDetailsComponent implements OnInit {
-    public member: Member;
+    public member: Member = null;
     public skills: Array<String>;
+    private memberId: number = null;
     constructor(
         private route: ActivatedRoute, private dataService: DataServiceService,
         private callNumber: CallNumber,
-        private emailComposer: EmailComposer
+        private emailComposer: EmailComposer,
+        private http: HttpClient
     ) {
     }
 
     ngOnInit() {
         const routeParams = this.route.snapshot.params
+        this.memberId = parseInt(routeParams.id);
         this.loadMemberDetail(routeParams.id);
     }
 
     loadMemberDetail(memberId: string) {
-        const members = this.dataService.teamMembers;
-        this.member = find(members, function (element) {
-            return (element.id === parseFloat(memberId));
-        });
-        this.skills = this.member.skills;
-        console.log(this.member);
+        this.http.get(`https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers/${memberId}`)
+            .subscribe((data: Response) => {
+                this.member = data['user'];
+                this.skills = this.member.skills;
+            });
     }
 
     callMember() {

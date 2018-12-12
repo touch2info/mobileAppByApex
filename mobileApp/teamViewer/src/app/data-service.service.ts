@@ -10,6 +10,7 @@ export class DataServiceService {
   public tasks: Array<any> = null;
   public user: Member = null;
   private id: number = 1000;
+  public membersDetails: Array<any> = null;
   constructor() {;
   }
 
