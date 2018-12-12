@@ -15,11 +15,11 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
     this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
-      .subscribe(data => {
+      .subscribe((data: Response) => {
         const items = [];
-        data = data['body'].teamMembers;
-        this.dataService.teamMembers = data;
-        data.forEach(element => {
+        const responseData = data['body']['teamMembers'];
+        this.dataService.teamMembers = responseData;
+        responseData.forEach(element => {
           items.push({
             name: element.name,
             role: element.role,
