@@ -24,7 +24,7 @@
         <strong>Skills</strong>
       </h3>
       <div class="skill-set" *ngFor="let skill of skills">
-      <ion-badge color="primary">{{skill}}</ion-badge>
+        <ion-badge color="primary">{{skill}}</ion-badge>
       </div>
     </div>
     <div>
@@ -41,13 +41,17 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-button fill="solid" expand="full" shape="round" (click)="callMember()"> 
-      <ion-icon name="call"></ion-icon>
-      {{member?.phone}}
-    </ion-button>
-    <ion-button fill="solid" expand="full" shape="round" (click)="emailMember()">
-        <ion-icon name="mail"></ion-icon>
-        {{member?.mail}}
+    <a href="tel:{{member?.phone}}">
+      <ion-button fill="solid" expand="full" shape="round">
+        <ion-icon name="call"></ion-icon>
+        <div class="button-text">{{member?.phone}}</div>
       </ion-button>
+    </a>
+    <a href="mailto:{{member?.mail}}">
+      <ion-button fill="solid" expand="full" shape="round">
+        <ion-icon name="mail"></ion-icon>
+        <div class="button-text">{{member?.mail}}</div>
+      </ion-button>
+    </a>
   </ion-toolbar>
 </ion-footer>
