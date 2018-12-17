@@ -14,7 +14,7 @@ export class ListPage implements OnInit {
   private appId: string = ';'
   public items: Array<{ name: string; role: string; icon: string; id: string; }> = [];
   private teamMembers: any = null;
-  private membersGrouping: Array<any> = [];
+  membersGrouping: Array<any> = [];
   constructor(private http: HttpClient, private dataService: DataServiceService,
     private route: ActivatedRoute, ) {
   }

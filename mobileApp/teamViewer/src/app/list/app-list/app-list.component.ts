@@ -10,7 +10,7 @@ import { DataServiceService } from 'src/app/data-service.service';
 })
 export class AppListComponent implements OnInit {
 
-  private appName: Array<{id: number, name: string}> = null;
+  appName: Array<{id: number, name: string}> = null;
   constructor(private http: HttpClient, private dataService: DataServiceService) { }
 
   ngOnInit() {

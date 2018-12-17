@@ -8,7 +8,7 @@ import { DataServiceService } from 'src/app/data-service.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  private userName: string = '';
+  userName: string = '';
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
