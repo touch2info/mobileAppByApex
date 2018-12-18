@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   { path: '', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'createMsg_Tsk', loadChildren: './create-msg-tsk/create-msg-tsk.module#CreateMsgTskPageModule' },
-  { path: 'create', loadChildren: './create/create.module#CreatePageModule' }
+  { path: 'create', loadChildren: './create/create.module#CreatePageModule' },  { path: 'logout', loadChildren: './logout/logout.module#LogoutPageModule' }
+
 ];
 
 @NgModule({
