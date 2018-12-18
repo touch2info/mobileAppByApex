@@ -10,15 +10,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item detail-push *ngFor="let item of items" [routerLink]="[item.id]">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.name}}
+  <ion-item-group *ngFor="let members of membersGrouping">
+    <ion-item-divider color="primary">{{members.title}}</ion-item-divider>
+    <ion-item detail-push *ngFor="let item of members.list" [routerLink]="[item.id]">
+      <ion-icon name="person" slot="start"></ion-icon>
+      {{item?.name}}
       <div class="item-note" slot="end">
-        {{item.role}}
+        {{item?.role}}
       </div>
     </ion-item>
-  </ion-list>
+  </ion-item-group>
   <!--
     <div *ngIf="selectedItem" padding>
       You navigated here from <b>{{selectedItem.title }}</b>
