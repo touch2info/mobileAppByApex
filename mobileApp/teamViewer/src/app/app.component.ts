@@ -20,17 +20,22 @@ export class AppComponent {
     {
       title: 'Team List',
       url: '/list',
-      icon: 'list'
+      icon: 'people'
     },
     {
       title: 'Tasks',
       url: '/tasks',
-      icon: 'list'
+      icon: 'checkbox'
     },
     {
       title: 'Create Msg/Task',
       url: '/create',
-      icon: 'list'
+      icon: 'chatboxes'
+    },
+    {
+      title: 'Logout',
+      url: '/',
+      icon: 'walk'
     }
   ];
 
