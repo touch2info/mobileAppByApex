@@ -20,6 +20,21 @@ export class ListPage implements OnInit {
   }
 
   ngOnInit() {
+    this.http.get('https://lvpcxvos1f.execute-api.us-east-1.amazonaws.com/dev/teammembers')
+      .subscribe((data: Response) => {
+        const items = [];
+        const responseData = data['body']['teamMembers'];
+        this.dataService.teamMembers = responseData;
+        responseData.forEach(element => {
+          items.push({
+            name: element.name,
+            role: element.role,
+            icon: 'person',
+            id: element.id
+          })
+        })
+        this.items = items;
+      })
     const routeParams = this.route.snapshot.params
     this.appId = routeParams.appName;
     this.loadMembers(routeParams.appName);
